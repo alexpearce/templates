@@ -82,6 +82,6 @@ namespace :admin do
 
   desc "Restart nginx."
   task :nginx_restart, roles: :app do
-    run "#{sudo} /etc/init.d/nginx restart"
+    run "#{sudo} service nginx restart"
   end
 end
