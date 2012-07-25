@@ -28,16 +28,17 @@ ssh_options[:forward_agent] = true
 
 # Use git, set the repo
 set :scm, :git
-set :repository,  "git@github.com:alexpearce/eos.git"
+set :repository,  "git@github.com:USERNAME/REPONAME.git"
 
 # Put the app in this directory
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
  
 # server roles
-role :app, "31.193.143.153"
-role :web, "31.193.143.153"
-role :db, "31.193.143.153", :primary: true
+# DOMAIN can be an IP or FQDN
+role :app, "DOMAIN"
+role :web, "DOMAIN"
+role :db, "DOMAIN", :primary: true
 
 # After an initial (cold) deploy, symlink the app and restart nginx
 after "deploy:cold" do
