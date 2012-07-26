@@ -38,7 +38,7 @@ set :deploy_via, :remote_cache
 # DOMAIN can be an IP or FQDN
 role :app, "DOMAIN"
 role :web, "DOMAIN"
-role :db, "DOMAIN", :primary: true
+role :db, "DOMAIN", primary: true
 
 # After an initial (cold) deploy, symlink the app and restart nginx
 after "deploy:cold" do
