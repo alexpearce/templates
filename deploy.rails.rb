@@ -65,12 +65,12 @@ end
 namespace :admin do
   desc "Link the server config to nginx."
   task :symlink_config, roles: :app do
-    run "#{sudo} ln -nfs #{deploy_to}/current/config/nginx.server /etc/nginx/sites_enabled/#{application}"
+    run "#{sudo} ln -nfs #{deploy_to}/current/config/nginx.server /etc/nginx/sites-enabled/#{application}"
   end
 
   desc "Unlink the server config."
   task :unlink_config, roles: :app do
-    run "#{sudo} rm /etc/nginx/sites_enabled/#{application}"
+    run "#{sudo} rm /etc/nginx/sites-enabled/#{application}"
   end
 
   desc "Restart nginx."
